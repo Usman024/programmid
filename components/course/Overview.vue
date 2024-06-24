@@ -1,11 +1,11 @@
 <template>
   <section class="card style-card bg-secondary">
     <article class="mx-auto w-fit">
-      <p class="text-subheading text-body-1 uppercase">
+      <p class="uppercase text-subheading text-body-1">
         {{ t("Headings.Price") }}
       </p>
       <div class="flex items-end gap-box">
-        <h2 class="m-0 text-display-2 leading-none">
+        <h2 class="m-0 leading-none text-display-2">
           {{ price > 0 ? abbreviateNumber(price) : t("Headings.Free") }}
         </h2>
         <p v-if="price > 0" class="m-0 text-body-1">
@@ -67,6 +67,7 @@
     <InputBtn
       :loading="loading"
       full
+      @click="onclickEnroll()"
       mt
       :class="{ 'pointer-events-none opacity-70': loading }"
     >
